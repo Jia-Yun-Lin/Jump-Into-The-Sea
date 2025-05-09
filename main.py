@@ -152,7 +152,7 @@ async def start():
     config = uvicorn.Config(app, host="0.0.0.0", port=10000, log_level="info")
     server = uvicorn.Server(config)
     # 同時啟動 bot 跟 web server
-    bot_task = asyncio.create_task(client.start(DISCORD_TOKEN, log_handler=handler, log_level=logging.INFO))
+    bot_task = asyncio.create_task(client.start(DISCORD_TOKEN))
     web_task = asyncio.create_task(server.serve())
     await asyncio.gather(bot_task, web_task)
 
