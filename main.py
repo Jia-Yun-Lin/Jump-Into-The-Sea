@@ -142,9 +142,13 @@ async def send_view():
 #%% --- FastAPI 設定 ---
 app = FastAPI()
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root():
     return {"message": "Discord bot is running!"}
+
+# @app.get("/")
+# async def root():
+#     return {"message": "Discord bot is running!"}
 
 # --- 並行執行 bot 與 Web Server ---
 async def start():
