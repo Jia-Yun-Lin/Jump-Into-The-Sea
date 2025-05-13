@@ -131,7 +131,7 @@ async def send_view():
     if channel:
         try:
             view = MyView()
-            sent_message = await channel.send(file=discord.File("CountryState.png"), view=view)
+            sent_message = await channel.send(file=discord.File("cover.jpg"), view=view)
             message_id = sent_message.id
             print("Message sent to channel!")
         except Exception as e:
